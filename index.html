@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ねむねむにゃんこだにゃん</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+  </head>
+  <body>
+    <section class="hero is-link">
+        <div class="hero-body">
+          <p class="title is-size-1">
+            ねむねむにゃんこだにゃん🐈
+          </p>
+          <p class="subtitle is-size-3">
+            さまざまなねむねむにゃんこだにゃんを生成しよう！
+          </p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <p class="is-size-5">ランダムなねむねむにゃんこだにゃんが生成されます。</p> 
+            <center>
+            <img src="cat_kotatsu_neko.png" width="300px">
+            <br>
+            <article class="message is-dark">
+                <div class="message-header">
+                  <p>出力</p>
+                  <button class="delete" aria-label="delete"></button>
+                </div>
+                <div class="message-body">
+                  <p id="nemunemu" class="is-size-5"></p>
+                </div>
+            </article>
+            <br>
+            <button py-click="nemunemu()" class="button is-link is-medium">Generate</button>
+            <py-script>
+                import random
+                str1 = "ねむねむにゃんこだにゃん"
+                def nemunemu():
+                    chrord = random.randint(128000, 128063)
+                    str2 = chr(chrord)
+                    str3 = str1 + str2
+                    pyscript.write("nemunemu", str3)
+            </py-script>
+            </center>
+        </div>
+    </section>
+  </body>
+</html>
